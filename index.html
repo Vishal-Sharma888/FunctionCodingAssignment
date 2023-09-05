@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Function</title>
+</head>
+<body>
+    <h3>Q1:- Create one function with zero parameter having a console statement;</h3>
+    <h4><pre>function greet() {
+        console.log("Welcome to function in javascript");
+      }
+    // Calling the function
+    greet();
+    <br>
+    Output1:- Welcome to function in javascript 
+      </pre></h4>
+    <hr>
+    <h4>Q2:- Create one function which takes two values as a parameter and print the sum of them as "Sum of 3, 4 is 7"</h4>
+    <h3><pre>function printSum(a, b) {
+        var sum = a + b;
+        console.log(`Sum of ${a}, ${b} is ${sum}`);
+      }
+      
+      // Calling the function
+      printSum(3, 4);
+
+      Output2:- 7
+      </pre></h3>
+      <hr>
+      <h3>Q3:- Create one arrow function</h3>
+      <h4><pre>const add = (a, b) => a + b;
+
+        // Calling the arrow function
+        const result = add(3, 4);
+        document.write(result);
+        //Output3:- 7 
+        </pre></h4>
+        <hr>
+        <h3><pre>Q4:Print output: 
+            var x = 21;
+            var girl = function () {
+                console.log(x);
+                var x = 20;
+            };
+            girl ();</pre></h3>
+        <h4>1. JavaScript has something called "variable hoisting." This    means that variable declarations are moved to the top of their containing scope during compilation, but the variable assignments remain in place. <br><br>
+
+        2.In the girl function, there is a console.log(x); statement before the variable x is assigned a value. When JavaScript encounters this code, it hoists the var x declaration to the top of the function scope but doesn't initialize it (i.e., it doesn't assign it a value) at that point. <br><br>
+            
+        3.So, the code inside the girl function is equivalent to the following after hoisting:</h4> <br><br>
+
+        4.As a result, when you call girl(), it logs undefined to the console before x is assigned the value 20. <br><br>
+        <hr>
+       <h3><pre>Q5:- Print output: 
+        var x = 21;
+        girl ();
+        console.log(x)
+        function girl() {
+            console.log(x);
+            var x = 20;
+        }; </pre></h3>
+        <h4>1. JavaScript has function-level scope. This means that variable      declarations inside a function are hoisted to the top of that function, and their scope is limited to that function. <br><br>
+
+            2. When the code is executed, the variable x is declared and initialized with the value 21 in the global scope. <br><br>
+            
+            3. Next, the girl() function is called before the console.log(x) statement in the global scope. Inside the girl function, there is another console.log(x); statement before the variable x is assigned a value. However, due to hoisting, the var x declaration inside the girl function is hoisted to the top of the function scope, and it shadows the global variable x. <br><br>
+            4.When you call girl(), it logs undefined to the console because the local variable x inside the girl function is declared but not yet assigned a value. <br><br>
+
+            5.Finally, when you console.log(x) in the global scope after calling girl(), it logs the global variable x, which has a value of 21. This is because the global x variable was not affected by the x declared inside the girl function due to the separate function-level scope. <br><br>
+             </h4>
+             <hr>
+             <h3><pre>Q6:- 
+
+                Print output
+                
+                var x = 21;
+                a();
+                b();
+                
+                  function a() {
+                    
+                   x = 20;
+                  console.log(x);
+                };
+                 function b() {</pre></h3>
+        <h4>1.Initially, a global variable x is declared and initialized with the value 21 in the global scope. <br><br>
+
+           2. The a function is defined, and within it, the global variable x is reassigned a new value of 20. <br><br>
+            
+           3. When you call the a() function, it logs the updated value of the global x, which is 20. So, the first console.log(x) inside a() logs 20. <br><br>
+            
+           4. Similarly, the b function is defined, but it doesn't have any code to change the value of x. However, it still has access to the global variable x. <br><br>
+            
+           5. When you call the b() function, it also logs the current value of the global x, which is still 20. So, the second console.log(x) inside b() also logs 20. <br><br>
+            
+           6. Both functions a() and b() have access to the same global variable x, and when you modify x inside a(), it affects the value of x that is accessible to both functions.</h4><br><br>
+        <hr>
+        <h3>Q7:- Write a function that accepts parameter n and returns factorial of n</h3>
+        <h4><pre>function factorial(n) {
+            if (n < 0) {
+              return undefined; // Factorial is undefined for negative numbers
+            }
+            
+            let result = 1;
+            
+            for (let i = 2; i <= n; i++) {
+              result *= i;
+            }
+            
+            return result;
+          }
+          
+          // Example usage:
+          const n = 5;
+          const result = factorial(n);
+          console.log(`Factorial of ${n} is ${result}`);
+          </pre></h4>
+          <h3><pre>Q1:- Guess the Output
+
+            function FindSum(a, b){
+                return a + b;
+            }
+            
+            function DisplayData(data, batch){
+                console.log(`i am from ${data} and My batch is EA${batch}`)
+            }
+            
+            DisplayData("PrepBytes", FindSum(10, 9)); </pre></h3>
+            <h4>1.The FindSum function takes two parameters, a and b, and returns their sum. <br><br>
+
+             2. In the DisplayData function call:
+              
+              "PrepBytes" is passed as the data argument.
+              FindSum(10, 9) is passed as the batch argument.
+             <br><br>
+            3.Inside the DisplayData function, a template string is used to construct the output string. ${data} is replaced with the value of the data argument, and ${batch} is replaced with the value of the batch argument. <br><br>
+              
+           4. The FindSum(10, 9) function call calculates the sum of 10 and 9, which is 19. <br><br>
+              
+           5.Therefore, the final output string becomes: "i am from PrepBytes and My batch is EA19". <br><br>
+              
+            6.This string is then logged to the console using console.log(), resulting in the displayed output:
+              
+              i am from PrepBytes and My batch is EA19</h4> <br><br>
+          <hr>
+          <h3><pre>Q2:- Guess the output
+
+            Abc();
+            const Abc = function(){
+                let value = 20;
+                console.log(value);
+            }</pre></h3>
+          <h4>1. In JavaScript, function declarations are hoisted. This means that when the code is executed, function declarations are moved to the top of their containing scope, and you can call them before their actual declaration in the code. <br><br>
+
+          2.However, function expressions (like the one you have used here) are not hoisted. They are treated like variable declarations and are only available in the code after the line where they are defined. <br><br>
+            
+          3.In your code, you're trying to call the Abc function before it is defined. This will result in a ReferenceError because the Abc function is not available in the scope at the time it's called. <br><br>
+            
+          4.To fix this issue, you should define the Abc function before calling it: <br><br>
+          5. With this corrected order of code, the output will be 20, as it will log the value of the value variable inside the Abc function. <br><br></h4>
+          <hr>
+          <h3><pre>Q3:- Guess the output
+
+            var a = 10;
+            (function (){
+                console.log(a);
+                var a = 20;
+            })();</pre></h3>
+          <h4>The output of the provided code will be undefined. <br><br>
+
+            Here's the reason behind this output: <br><br>
+            
+            Inside the immediately invoked function expression (IIFE), there is a console.log(a) statement. <br><br>
+            
+            There's also a variable a declared inside the IIFE with the value 20. This declaration using var is hoisted to the top of the function scope. <br><br>
+            
+            JavaScript hoists variable declarations to the top of their containing function or global scope. So, the code is effectively interpreted like this: <br><br>
+ 
+            When console.log(a) is executed inside the IIFE, the local variable a declared inside the function takes precedence over the global variable a, but it hasn't been assigned a value at that point. So, it logs undefined. <br><br>
+            To avoid this behavior and get the output of 10, you would need to remove the var a = 20; declaration inside the IIFE: <br><br>
+          </h4>
+          <hr>
+          <h3><pre>Q4:- Guess the Output
+            const greet =  function(name){
+                return function(m){
+                
+                    console.log(`Hi!! ${name}, ${m}`);
+                }
+            }
+              
+            const greet_message = greet('EA19');
+            greet_message("Welcome To PrepBytes")Guess the Output
+            const greet =  function(name){
+                return function(m){
+                
+                    console.log(`Hi!! ${name}, ${m}`);
+                }
+            }
+              
+            const greet_message = greet('EA19');
+            greet_message("Welcome To PrepBytes")</pre></h3>
+
+      <h4>1. const greet = function(name): This line defines a function called    greet that takes a name parameter. <br><br>
+
+       2.  return function(m) { ... }: Inside the greet function, it returns an anonymous inner function that takes a parameter m. <br><br>
+        
+       3. const greet_message = greet('EA19');: This line calls the greet function with the argument 'EA19' and assigns the returned inner function to the variable greet_message. <br><br>
+        
+       4. greet_message("Welcome To PrepBytes"): This line calls the greet_message function with the argument "Welcome To PrepBytes".
+       <br><br> 
+        Now, let's analyze the code execution: <br><br> 
+        
+        When you call greet('EA19'), it returns the inner function. So, greet_message now holds a reference to that inner function.
+        <br><br> 
+        When you subsequently call greet_message("Welcome To PrepBytes"), it executes the inner function, which logs a message to the console using console.log. The message is "Hi!! EA19, Welcome To PrepBytes".
+        <br><br> 
+        So, the correct output of the code is:
+        Hi!! EA19, Welcome To PrepBytes
+        <br><br> 
+        The output includes the value of name (which is 'EA19') and the value of m (which is "Welcome To PrepBytes") <br><br> </h4>
+        <hr>  
+    <script src="./script.js"></script>
+</body>
+</html>
